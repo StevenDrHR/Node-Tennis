@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>index</title>
+
+    <style media="screen">
+      body {
+        margin-left: 2em;
+      }
+
+      .appointment-form {
+        margin-top: 3em;
+      }
+
+      .appointment-table {
+        margin-top: 2em;
+      }
+
+      .appointment-table td {
+        padding-right: 1.5em;
+        padding-bottom: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+
+    <form class="appointment-form" action="/addAppointment" method="post">
+      <input type="text" name="name" placeholder="name" />
+      <input type="date" name="date" placeholder="date" />
+      <button type="submit">Click</button>
+    </form>
+
+    <table class="appointment-table">
+      {{#each appointments}}
+        <tr>
+          <td>{{this.name}}</td> <td>{{this.date}}</td>
+        </tr>
+      {{/each}}
+    </table>
+  </body>
+</html>
